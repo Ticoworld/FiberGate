@@ -1,0 +1,31 @@
+{
+  "name": "fibergate-paid-content-example",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "init": "node scripts/init.mjs",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "setup": "npm run build && node scripts/setup.mjs",
+    "start": "npm run build && node dist/server.js",
+    "fixture": "npm run build && node scripts/fixture-gateway.mjs",
+    "demo": "node scripts/demo.mjs",
+    "test": "npm run build && node --test --test-concurrency=1 test/database-safety.test.mjs test/conventional.test.mjs test/integration.test.mjs"
+  },
+  "dependencies": {
+    "@fibergate/sdk": "0.1.0",
+    "@fiberlatch/access": "0.1.1",
+    "@fiberlatch/postgres-store": "0.1.0",
+    "pg": "8.16.3"
+  },
+  "description": "Optional merchant-side paid download example using published FiberGate and FiberLatch packages",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "@types/pg": "8.16.0",
+    "typescript": "5.9.3"
+  }
+}

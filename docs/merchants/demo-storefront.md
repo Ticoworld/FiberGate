@@ -73,3 +73,17 @@ Want to pay a demo invoice without a separate wallet or node? See
 second throwaway node), not something a merchant or integrator needs to understand.
 
 Something not working? See [Troubleshooting](../common/troubleshooting.md).
+
+## Optional paid-content integration
+
+For the merchant work after a verified payment notification, see the independent
+[FiberGate × FiberLatch paid-content example](https://github.com/tiennt0212/FiberGate/tree/canary/examples/paid-content).
+It adds durable order/invoice binding, one persistent entitlement per purchase,
+authenticated receipt retrieval and a protected download with a three-request
+allowance. It installs separately and adds no dependencies to existing FiberGate
+users.
+
+Its payment tests use controlled signed fixtures, **not real Fiber settlement**.
+It is a local merchant integration example, not a production commerce system;
+existing invoice-creation recovery limitations in
+[issue #93](https://github.com/tiennt0212/FiberGate/issues/93) still apply.

@@ -1,0 +1,12 @@
+Fiber Merchant Field Guide — proof edition
+
+1. Persist the order before asking a gateway to create an invoice.
+2. Bind a successful invoice response before presenting checkout.
+3. Verify payment notifications over their exact raw body.
+4. Fulfill once, then authorize each protected download on the server.
+
+This original demonstration asset is sold for 1 CKB in the local fixture.
+Your purchase allows three download requests within 30 days of fulfillment.
+Each authorized request consumes one use before bytes are returned. A broken
+connection can still consume a use. Saving this file permits offline reading;
+the allowance limits server downloads, not copying or reading saved content.
